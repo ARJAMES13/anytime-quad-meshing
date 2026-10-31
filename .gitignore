@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+*.ipynb_checkpoints
+
+# local data, checkpoints, scratch
+checkpoints/
+data/*
+!data/README.md
+*.joblib
+*.step
+*.stp
+*.brep
+*.obj
+*.msh
+.tmp/
+
+# editor / assistant tooling
+.claude/
+CLAUDE.md
+AGENTS.md
+CURRENT_TASK.md
+.agent-state/
+.remember/
+.superpowers/
+.cursor/
+.vscode/
+.idea/

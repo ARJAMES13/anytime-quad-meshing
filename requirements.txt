@@ -1,0 +1,11 @@
+# Python 3.12. Instant Meshes (pyinstantmeshes) is built from source with a small patch:
+# see third_party/pyinstantmeshes_patch/BUILD.md
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+joblib==1.6.0
+gmsh==4.15.2
+libigl==2.6.3
+psutil==7.2.2
+matplotlib==3.11.2
+pytest==9.1.1

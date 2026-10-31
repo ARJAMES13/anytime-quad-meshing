@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anytime-mesh"
+version = "1.0.0"
+description = "Learned anytime policy for budget-matched quad meshing of CAD solids"
+requires-python = ">=3.11"
+license = "MIT"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
