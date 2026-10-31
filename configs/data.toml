@@ -1,0 +1,9 @@
+# Local dataset roots. A part id '<source>/<relative path>' resolves to '<root of source>/<relative path>'.
+# See data/README.md for how to obtain each source. Leave a source empty to skip it.
+
+[sources]
+abc = ""          # ABC dataset, chunk 0 STEP files:  <root>/<8-digit id>/<file>.step
+set_b = ""        # second CAD collection (not redistributed)
+simjeb = ""       # SimJEB bracket STEP files
+cad_models = ""   # small set of generic mechanical parts (flanges, brackets, blocks)
+hexme = ""        # HexMe "original" CAD files (out-of-distribution test set)
