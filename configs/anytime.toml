@@ -1,0 +1,26 @@
+# Learned anytime policy: paths are relative to the repository root.
+
+[paths]
+train = "results/labels/train_router.jsonl"
+val = "results/labels/val_pert.jsonl"
+test = "results/labels/test_v1.jsonl"
+ood = "results/labels/ood_v1.jsonl"
+descriptors = "results/features/descriptors_v1.npz"
+split = "configs/splits/v1.json"
+
+[policy]
+lambdas = [0.0, 0.002, 0.005, 0.01, 0.02, 0.05]   # seconds -> score trade-off grid
+val_tolerance = 0.02                             # pick the largest lam within 2 % of the best VAL mean
+clip = 2.0                                       # regression targets clipped (failure score is 10)
+
+[policy.gbm]                                     # sklearn HistGradientBoostingRegressor, one per action
+max_depth = 3
+max_iter = 300
+learning_rate = 0.04
+min_samples_leaf = 12
+l2_regularization = 1.0
+random_state = 0
+
+[inference]
+target_quads = 2500        # element budget when no reference count is given
+expected_time_s = [2.11, 3.85, 10.46, 12.20]   # per-action mean times on the test set (stop, +IMk, +QQS, +both)
