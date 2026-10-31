@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this code or benchmark, please cite it as below."
+title: "Learned anytime policy for budget-matched quad meshing of CAD solids"
+type: software
+authors:
+  - alias: ARJAMES13
+version: 1.0.0
+date-released: 2026-11-01
+license: MIT
+repository-code: "https://github.com/ARJAMES13/anytime-quad-meshing"
+keywords:
+  - quad meshing
+  - CAD
+  - mesh generation
+  - learned policy
+  - benchmark
