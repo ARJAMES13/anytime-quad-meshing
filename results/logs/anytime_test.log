@@ -1,0 +1,17 @@
+train 648 val 145 test 142 (results/labels/test_v1.jsonl)
+val sweep (lam, mean score, mean time): [(0.0, np.float64(0.2547), np.float64(9.41)), (0.002, np.float64(0.2558), np.float64(7.52)), (0.005, np.float64(0.2587), np.float64(5.66)), (0.01, np.float64(0.2673), np.float64(4.64)), (0.02, np.float64(0.275), np.float64(3.77)), (0.05, np.float64(0.2945), np.float64(2.95))] -> lam* 0.005
+  QQS alone                          mean 0.3760 median 0.3062  Δ +0.0000 [+0.0000,+0.0000]  W/L 0/0 p 1.0e+00  time 8.35s
+  fixed: IM1 then stop               mean 0.3954 median 0.2992  Δ +0.0194 [-0.0598,+0.1145]  W/L 67/72 p 7.3e-01  time 2.11s
+  fixed: IM1 then +IMk               mean 0.3467 median 0.2698  Δ -0.0293 [-0.0980,+0.0502]  W/L 78/61 p 1.7e-01  time 3.85s
+  fixed: IM1 then +QQS               mean 0.2518 median 0.2306  Δ -0.1242 [-0.1622,-0.0885]  W/L 67/0 p 1.4e-20  time 10.46s
+  fixed: IM1 then +both              mean 0.2396 median 0.2282  Δ -0.1364 [-0.1753,-0.1001]  W/L 78/0 p 6.6e-24  time 12.20s
+  ML policy lam=0.0                  mean 0.2421 median 0.2294  Δ -0.1339 [-0.1729,-0.0973]  W/L 75/3 p 5.2e-19  time 8.38s
+  ML policy lam=0.002                mean 0.2429 median 0.2294  Δ -0.1331 [-0.1720,-0.0965]  W/L 73/3 p 1.9e-18  time 6.26s
+  ML policy lam=0.005 <- val-chosen  mean 0.2451 median 0.2306  Δ -0.1309 [-0.1702,-0.0944]  W/L 73/6 p 1.0e-15  time 5.66s
+    action mix: {'stop': 0.06, '+IMk': 0.26, '+QQS': 0.27, '+both': 0.41}
+  ML policy lam=0.01                 mean 0.2507 median 0.2337  Δ -0.1253 [-0.1645,-0.0879]  W/L 72/11 p 3.9e-12  time 4.57s
+  ML policy lam=0.02                 mean 0.2608 median 0.2479  Δ -0.1152 [-0.1548,-0.0778]  W/L 71/24 p 1.5e-06  time 3.41s
+  ML policy lam=0.05                 mean 0.2786 median 0.2758  Δ -0.0974 [-0.1385,-0.0582]  W/L 68/42 p 1.7e-02  time 2.62s
+component means at lam*=0.005 over 142 parts valid for both (lower is better except sj_p05):
+  QQS alone     irregular_frac 0.04187  bad_frac 0.04747  sj_p05 0.54707  hausdorff_rel 0.00571  feat_dist_rel 0.00031  chamfer_rel 0.00020
+  ML policy     irregular_frac 0.02686  bad_frac 0.00683  sj_p05 0.80233  hausdorff_rel 0.00940  feat_dist_rel 0.00185  chamfer_rel 0.00045
